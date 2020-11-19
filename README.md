@@ -234,3 +234,17 @@ This folder contains additional resources for data provided by modified ZIP Code
 ### archive/ 
 
 This folder contains files that are no longer updated. 
+
+
+
+# Additions for this fork
+
+I (@cmorganti) made this fork to create visualizations of data, primarily by ZIP code, to see how their metrics align with the [NY State COVID microcluster criteria](https://www.governor.ny.gov/sites/governor.ny.gov/files/atoms/files/MicroCluster_Metrics_10.21.20_FINAL.pdf?fbclid=IwAR21KmAzZRVT4h6m_NTwUhsPMi7zoXsu2SDoHgruVC8W1mmezUV4Jqz-gd0). 
+
+I started this on a whim, and it's still very much a work in progress.
+
+Known limitations at the moment:
+* For areas that are _already_ designated as red/orange/yellow zones, I haven't implemented any methods/visualizations to track how close they are to meeting "exit" criteria to be downgraded to a less severe zone. In other words, currently I'm only looking at _qualification metrics_ for areas that might get a more restrictive classification. Given that cases are generally rising, I decided to focus on this first.
+* NY state microcluster criteria specify a seven-day rolling average over the last _ten_ days for case numbers, and well as cases per capita. The NYC data only has this data for the _most recent_ seven-day period, and does not seem to have raw case numbers per ZIP code per day, or seven-day averages of case numbers/rates they same way they do for positivity rates. While I could estimate case numbers for prior seven-day intervals based on the file revision history, given that the data uploaded each day is incomplete/data from the last couple of days often get revised on subsequent days, it would be a less accurate than, e.g. the positivity 7-day averages for which NYC keeps a running tally per day. That said, it appears that NYC ZIP codes that meet the positivity thresholds seem to also be meeting the case numbers/cases per capita, so it might be a moot point. Further investigation is warranted here.
+* Working on more visualizations for case numbers/rates
+* Also need to make the code look nicer/refactor it. Sorry, it's 2am!
